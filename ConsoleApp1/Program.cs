@@ -1,23 +1,19 @@
-﻿
-
-
-
-int[] conc = [];
-int sum = 0;
-for (int i = 0; i < 101; i++)
+﻿class Program
 {
-    Console.WriteLine("ВВедите число №" + i);
-    conc[i] = int.Parse(Console.ReadLine());
-    if ((conc[i] % 10 == 3) & (conc[i] % 7 == 0))
+    static void Main()
     {
-        sum = sum + conc[i];
+        int x, y; //координаты игрока
+        string[][] field = [new string[3], new string[3], new string[3]]; //игровое поле
+        x = int.Parse(Console.ReadLine()); //ввод
+        y = int.Parse(Console.ReadLine());
+        field[x][y] = "X";
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                Console.Write(field[i][j]);
+            }
+            Console.Write("\n");
+        }
     }
-    if (conc[i] == 0)
-    {
-        break;
-    }
-
-
-
 }
-Console.WriteLine(sum);
